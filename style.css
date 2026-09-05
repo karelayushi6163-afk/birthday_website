@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap');
+
+:root{
+  --bg:#09070c;
+  --card:rgba(255,255,255,.065);
+  --line:rgba(255,255,255,.13);
+  --text:#fff7fb;
+  --muted:#d8cbd2;
+  --pink:#ff7195;
+  --pink2:#ffb4c7;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 50% 15%,rgba(255,83,130,.16),transparent 35%),
+    radial-gradient(circle at 10% 80%,rgba(160,70,255,.08),transparent 30%),
+    var(--bg);
+  color:var(--text);
+  font-family:Poppins,Arial,sans-serif;
+  overflow-x:hidden;
+}
+button,p,h1,h2,h3,div,span{
+  -webkit-font-smoothing:antialiased;
+}
+button,.letter-card,.love-list,.memory,.youme-card{
+  font-family:Poppins,"Segoe UI Emoji","Noto Color Emoji","Apple Color Emoji",Arial,sans-serif;
+}
+.letter-card,.hero,.final,.love-list,.memory,.youme-card,.section-tag,.hero-sub,h1,h2,h3,p{
+  font-family:Poppins,"Segoe UI Emoji","Noto Color Emoji","Apple Color Emoji",Arial,sans-serif;
+}
+h1,h2{
+  font-family:"Cormorant Garamond","Segoe UI Emoji","Noto Color Emoji",serif;
+}
+.stars{
+  position:fixed;inset:0;pointer-events:none;opacity:.45;
+  background-image:
+   radial-gradient(#fff 1px,transparent 1px),
+   radial-gradient(#fff 1px,transparent 1px);
+  background-size:90px 90px,130px 130px;
+  background-position:0 0,40px 60px;
+}
+.hearts span{
+  position:fixed;bottom:-40px;font-size:22px;opacity:.22;
+  animation:float 11s linear infinite;pointer-events:none;z-index:0;
+}
+.hearts span:nth-child(1){left:8%;animation-delay:1s}
+.hearts span:nth-child(2){left:25%;animation-delay:4s}
+.hearts span:nth-child(3){left:44%;animation-delay:2s}
+.hearts span:nth-child(4){left:64%;animation-delay:6s}
+.hearts span:nth-child(5){left:80%;animation-delay:3s}
+.hearts span:nth-child(6){left:92%;animation-delay:7s}
+@keyframes float{to{transform:translateY(-115vh) rotate(25deg)}}
+
+.progress{position:fixed;top:0;left:0;right:0;height:3px;background:rgba(255,255,255,.06);z-index:20}
+#progressBar{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),#ffd0dc);transition:width .5s}
+
+main{position:relative;z-index:2}
+.screen{
+  display:none;
+  min-height:100vh;
+  padding:80px 7vw 55px;
+  max-width:1050px;
+  margin:auto;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  animation:enter .7s ease both;
+}
+.screen.active{display:flex}
+@keyframes enter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+.hero{max-width:1200px}
+.eyebrow,.section-tag{
+  color:#f0aabd;
+  letter-spacing:.22em;
+  font-size:11px;
+  font-weight:600;
+  margin-bottom:22px;
+}
+.hero-content{
+  width:min(900px,100%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.hero-emoji{
+  font-size:clamp(54px,8vw,88px);
+  line-height:1;
+  margin-bottom:10px;
+  filter:drop-shadow(0 0 22px rgba(255,90,130,.35));
+}
+h1{
+  font-size:clamp(58px,9vw,105px);
+  line-height:.9;
+  margin:0 0 22px;
+  font-weight:600;
+  letter-spacing:-.025em;
+}
+h1 span{font-family:Arial,sans-serif;font-size:.55em}
+.hero-sub{
+  color:var(--muted);
+  font-size:clamp(14px,2vw,17px);
+  line-height:1.8;
+  margin:0 0 34px;
+}
+h2{
+  font-size:clamp(42px,6vw,72px);
+  line-height:1;
+  margin:0 0 18px;
+}
+h2 span{color:var(--pink2)}
+.lead{
+  color:var(--muted);
+  max-width:650px;
+  line-height:1.8;
+  margin:0 auto 32px;
+}
+.primary,.ghost,.next-link{
+  border:0;cursor:pointer;transition:.25s ease;
+  font-family:Poppins,"Segoe UI Emoji","Noto Color Emoji",Arial,sans-serif;
+}
+.primary{
+  padding:14px 24px;border-radius:999px;
+  color:#fff;background:linear-gradient(135deg,#ff6e94,#df4d78);
+  box-shadow:0 12px 35px rgba(255,90,130,.22);
+  font-size:14px;
+}
+.primary:hover{transform:translateY(-2px);box-shadow:0 16px 42px rgba(255,90,130,.32)}
+.ghost{
+  padding:11px 20px;border:1px solid var(--line);border-radius:999px;
+  color:var(--muted);background:transparent;margin-top:30px;
+}
+.next-link{
+  background:none;color:#f5a8bc;margin-top:32px;font-size:14px;
+}
+.text-section{justify-content:flex-start;text-align:left;max-width:900px}
+.text-section h2,.text-section .section-tag{text-align:center}
+.letter-card{
+  width:100%;padding:30px 34px;
+  background:var(--card);border:1px solid var(--line);
+  border-radius:24px;box-shadow:0 20px 70px rgba(0,0,0,.25);
+  backdrop-filter:blur(12px);
+  line-height:1.85;color:#f5e9ee;font-size:15px;
+}
+.letter-card p{margin:0 0 18px}
+.letter-card p:last-child{margin-bottom:0}
+.closing{color:#ffb2c6;font-weight:600}
+.memory-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+  width:100%;margin:12px 0 32px;
+}
+.memory{
+  text-align:left;padding:24px;border-radius:20px;
+  background:var(--card);border:1px solid var(--line);
+}
+.memory span{font-size:12px;color:#ff9bb3}
+.memory h3{margin:10px 0 8px;font-size:17px}
+.memory p{color:var(--muted);font-size:13px;line-height:1.7;margin:0}
+.youme-card{
+  width:min(600px,100%);padding:30px;border:1px solid var(--line);
+  border-radius:24px;background:var(--card);display:grid;gap:13px;
+  font-size:16px;color:var(--muted);margin-bottom:30px;
+}
+.youme-card b{color:#ff91ab;font-size:25px}
+.youme-card .big{color:#fff;font-size:20px;font-weight:600}
+.love-list{
+  width:min(650px,100%);display:grid;gap:12px;margin:10px 0 30px;text-align:left;
+}
+.love-list div{
+  padding:17px 20px;border:1px solid var(--line);border-radius:16px;
+  background:var(--card);color:#f6e9ee;
+}
+.final-heart{
+  font-size:clamp(65px,10vw,105px);
+  animation:pulse 1.7s ease-in-out infinite;
+  margin-bottom:20px;
+}
+@keyframes pulse{50%{transform:scale(1.12);filter:drop-shadow(0 0 25px rgba(255,80,120,.4))}}
+.final p{color:var(--muted);line-height:1.9}
+.forever{margin-top:20px;color:#ffb0c3;font-family:"Cormorant Garamond",serif;font-size:28px}
+
+@media(max-width:700px){
+  .screen{padding:70px 20px 40px}
+  .memory-grid{grid-template-columns:1fr}
+  .letter-card{padding:22px 20px;font-size:14px;line-height:1.75}
+  .hero-sub{font-size:14px}
+  h1{font-size:58px}
+}
